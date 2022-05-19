@@ -8,10 +8,10 @@
 
   - name: install apache
     dnf:
-    name: httpd
-    state: latest
+      name: httpd
+      state: latest
 
   - name: remove apache
     dnf:
-    name: httpd
-    state: absent
+      name: httpd
+      state: absent

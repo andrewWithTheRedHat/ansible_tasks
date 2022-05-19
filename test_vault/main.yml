@@ -1,5 +1,6 @@
 ---
 
+name: task vault for testing ansible tasks and whatnot
 hosts: all
 gather_facts: yes
 

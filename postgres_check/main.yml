@@ -1,19 +1,19 @@
 ---
 
-name: pull some info from postgres and throw it into an html file
-hosts: localhost
-gather_facts: false
+- name: pull some info from postgres and throw it into an html file
+  hosts: localhost
+  gather_facts: false
 
-tasks:
+  tasks:
 
-  - name: log into the postgres db on controller
-    community.postgresql.postgresql_query:
-      db: awx
-      login_user: '{{ username }}'
-      login_password: '{{ password }}'
-      query: TABLE main_jobhostsummary
-    register: query
+    - name: log into the postgres db on controller
+      community.postgresql.postgresql_query:
+        db: awx
+        login_user: '{{ username }}'
+        login_password: '{{ password }}'
+        query: TABLE main_jobhostsummary
+      register: query
 
-  - name: echo query
-    debug:
-      msg: query
+    - name: echo query
+      debug:
+        msg: query
